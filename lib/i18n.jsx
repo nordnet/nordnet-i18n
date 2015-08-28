@@ -32,5 +32,8 @@ export default (Component) => {
     translate: React.PropTypes.func.isRequired,
   };
 
+  Component.contextTypes = Component.contextTypes || {};
+  Component.contextTypes.translate = React.PropTypes.func.isRequired;
+
   return i18n;
 };

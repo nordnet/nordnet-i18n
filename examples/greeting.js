@@ -11,9 +11,5 @@ class Greeting extends React.Component {
   }
 }
 
-Greeting.contextTypes = {
-  translate: React.PropTypes.func.isRequired,
-};
-
 export default i18n(Greeting);
 
