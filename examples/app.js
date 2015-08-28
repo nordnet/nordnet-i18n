@@ -1,30 +1,28 @@
+// To get it working on react 0.13 see https://github.com/facebook/react/issues/3451
+
 import React from "react";
 import Greeting from "./greeting";
 
-//
+
 import {initialize} from '../lib/index';
 
-const sv = {
+const intlData = {
   locales: ['sv-SE'],
   messages: {
-    foo: {
-      title: 'Hej'
+    title: {
+      world: 'Värld'
     }
   },
 }
 
-console.log('initialize', initialize);
-
-let element = undefined; // TODO
 initialize(document.body).then(start);
 
 function start(locale) {
-  const intlData = {'sv-SE': sv}
-
-  console.log('got locale', locale);
-
   React.render(
-    <Greeting name="World"/>,
+    <h2>
+      <span>{locale}</span>
+        <Greeting name="World" {...intlData}/>
+    </h2>,
     document.body
   );
 

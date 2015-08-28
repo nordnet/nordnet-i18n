@@ -6,11 +6,12 @@ class Greeting extends React.Component {
   render() {
     return (
       <div className="greeting">
-        Hello, {this.context.translate('WORLD')}
+        Hello {this.context.translate('title.world')}
       </div>
     );
   }
 }
+
 
 Greeting.contextTypes = {
   translate: React.PropTypes.func.isRequired,
