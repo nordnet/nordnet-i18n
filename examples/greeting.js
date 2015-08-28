@@ -1,20 +1,19 @@
-import React from "react";
+import React from 'react';
 import {i18n} from '../lib/index';
-
 
 class Greeting extends React.Component {
   render() {
     return (
-      <div className="greeting">
+      <div className='greeting'>
         Hello {this.context.translate('title.world')}
       </div>
     );
   }
 }
 
-
 Greeting.contextTypes = {
   translate: React.PropTypes.func.isRequired,
 };
 
 export default i18n(Greeting);
+

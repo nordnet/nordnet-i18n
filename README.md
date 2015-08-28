@@ -18,4 +18,4 @@ npm install --save nordnet-i18n
 
 ## Usage
 
-See examples/index.jsx or unit tests
+See [examples](examples/README.md) or unit tests
