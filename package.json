@@ -24,6 +24,10 @@
   },
   "author": "Nordnet",
   "license": "MIT",
+  "keywords": [
+    "Nordnet",
+    "i18n"
+  ],
   "bugs": {
     "url": "https://github.com/nordnet/nordnet-18n/issues"
   },
