@@ -73,4 +73,4 @@ class MyComponent extends React.Component {
 
 ## Usage
 
-See the complete [example](examples/README.md) or [unit tests](lib/__tests__)
+See the complete [example](examples/) or [unit tests](lib/__tests__)
