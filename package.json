@@ -1,0 +1,68 @@
+{
+  "name": "nordnet-i18n",
+  "version": "0.0.1",
+  "description": "Nordnet React and Intl locale configuration",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "jscs -c .jscsrc lib",
+    "test": "karma start",
+    "test:debug": "karma start --no-single-run --reporters mocha --browsers Chrome",
+    "test:tdd": "karma start --auto-watch --no-single-run --reporters mocha karma.conf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nordnet/nordnet-18n.git"
+  },
+  "author": "Nordnet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nordnet/nordnet-18n/issues"
+  },
+  "homepage": "https://github.com/nordnet/nordnet-18n",
+
+  "dependencies": {
+    "es6-promise": "^3.0.2",
+    "intl": "^1.0.0",
+    "nordnet-next-api": "^1.0.0",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-core": "^5.3.3",
+    "babel-eslint": "^4.0.0",
+    "babel-jscs": "^2.0.0",
+    "babel-loader": "^5.0.0",
+    "babel-runtime": "^5.3.3",
+    "chai": "^3.2.0",
+    "chai-array": "0.0.2",
+    "chai-react": "^1.0.5",
+    "es6-promise-polyfill": "^1.0.0",
+    "eslint": "^1.2.1",
+    "eslint-config-airbnb": "^0.0.7",
+    "eslint-config-nordnet": "^0.0.3",
+    "eslint-plugin-react": "^3.3.0",
+    "isparta": "^3.0.3",
+    "isparta-loader": "^0.2.0",
+    "jscs": "^2.0.0",
+    "jscs-config-nordnet": "0.0.2",
+    "karma": "^0.13.9",
+    "karma-chai-sinon": "^0.1.5",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "^0.5.0",
+    "karma-junit-reporter": "^0.3.3",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-webpack": "^1.7.0",
+    "lodash": "^3.8.0",
+    "mocha": "^2.2.4",
+    "npm-run-all": "^1.2.6",
+    "phantomjs": "^1.9.18",
+    "sinon": "^1.16.1",
+    "sinon-as-promised": "^4.0.0",
+    "sinon-chai": "^2.8.0",
+    "webpack": "^1.9.5",
+    "webpack-dev-server": "^1.8.2"
+  }
+}
