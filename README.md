@@ -57,16 +57,12 @@ Example:
 ```js
 import {i18n} from '../lib/index';
 class MyComponent extends React.Component {
-    render() {
-      return (<h2>{this.context.translate(this.props.title)}</h2>);
-    }
+  render() {
+    return (<h2>{this.context.translate(this.props.title)}</h2>);
   }
+}
     
-  var intlData = {
-    messages: {} // Your translations 
-  }
-  
-  export default i18n(MyComponent);
+export default i18n(MyComponent);
 ```
 
  
