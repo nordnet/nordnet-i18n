@@ -4,7 +4,9 @@
   "description": "Nordnet React and Intl locale configuration",
   "main": "lib/index.js",
   "scripts": {
-    "lint": "jscs -c .jscsrc lib",
+    "eslint": "eslint lib",
+    "jscs": "jscs -c .jscsrc lib",
+    "lint": "npm-run-all jscs eslint",
     "test": "karma start",
     "test:debug": "karma start --no-single-run --reporters mocha --browsers Chrome",
     "test:tdd": "karma start --auto-watch --no-single-run --reporters mocha karma.conf"
@@ -45,7 +47,7 @@
     "isparta": "^3.0.3",
     "isparta-loader": "^0.2.0",
     "jscs": "^2.0.0",
-    "jscs-config-nordnet": "0.0.2",
+    "jscs-config-nordnet": "1.0.2",
     "karma": "^0.13.9",
     "karma-chai-sinon": "^0.1.5",
     "karma-chrome-launcher": "^0.2.0",
