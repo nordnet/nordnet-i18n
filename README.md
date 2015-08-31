@@ -70,3 +70,13 @@ export default i18n(MyComponent);
 ## Usage
 
 See the complete [example](examples/) or [unit tests](lib/__tests__)
+
+
+[npm-url]: https://npmjs.org/package/nordnet-i18n
+[npm-image]: https://img.shields.io/npm/v/nordnet-i18n.svg
+
+[travis-url]: https://travis-ci.org/nordnet/nordnet-i18n
+[travis-image]: https://travis-ci.org/nordnet/nordnet-i18n.svg?branch=master
+
+[depstat-url]: https://david-dm.org/nordnet/nordnet-i18n
+[depstat-image]: https://david-dm.org/nordnet/nordnet-i18n.svg
