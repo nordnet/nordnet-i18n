@@ -19,12 +19,12 @@
     "url": "https://github.com/nordnet/nordnet-18n/issues"
   },
   "homepage": "https://github.com/nordnet/nordnet-18n",
-
   "dependencies": {
     "es6-promise": "^3.0.2",
     "intl": "^1.0.0",
     "nordnet-next-api": "^1.0.0",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-intl": "^1.2.0"
   },
   "devDependencies": {
     "babel": "^5.8.21",
@@ -36,6 +36,7 @@
     "chai": "^3.2.0",
     "chai-array": "0.0.2",
     "chai-react": "^1.0.5",
+    "es5-shim": "^4.1.11",
     "es6-promise-polyfill": "^1.0.0",
     "eslint": "^1.2.1",
     "eslint-config-airbnb": "^0.0.7",
@@ -48,6 +49,7 @@
     "karma": "^0.13.9",
     "karma-chai-sinon": "^0.1.5",
     "karma-chrome-launcher": "^0.2.0",
+    "karma-common-js": "^0.2.2",
     "karma-coverage": "^0.5.0",
     "karma-junit-reporter": "^0.3.3",
     "karma-mocha": "^0.2.0",
