@@ -4,12 +4,19 @@
   "description": "Nordnet React and Intl locale configuration",
   "main": "lib/index.js",
   "scripts": {
-    "eslint": "eslint lib",
-    "jscs": "jscs -c .jscsrc lib",
+    "build": "babel src --out-dir lib",
+    "clean": "rimraf lib dist",
+    "eslint": "eslint src",
+    "jscs": "jscs -c .jscsrc src",
     "lint": "npm-run-all jscs eslint",
     "test": "karma start",
     "test:debug": "karma start --no-single-run --reporters mocha --browsers Chrome",
-    "test:tdd": "karma start --auto-watch --no-single-run --reporters mocha karma.conf"
+    "test:tdd": "karma start --auto-watch --no-single-run --reporters mocha karma.conf",
+    "validate": "npm run lint && npm test",
+    "prebuild": "npm run validate",
+    "prepush": "npm run validate",
+    "prepublish": "npm run build",
+    "postpublish": "rimraf lib && git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -21,6 +28,7 @@
     "url": "https://github.com/nordnet/nordnet-18n/issues"
   },
   "homepage": "https://github.com/nordnet/nordnet-18n",
+
   "dependencies": {
     "es6-promise": "^3.0.2",
     "intl": "^1.0.0",
@@ -63,6 +71,7 @@
     "mocha": "^2.2.4",
     "npm-run-all": "^1.2.6",
     "phantomjs": "^1.9.18",
+    "rimraf": "^2.4.3",
     "sinon": "^1.16.1",
     "sinon-as-promised": "^4.0.0",
     "sinon-chai": "^2.8.0",

@@ -3,7 +3,7 @@ const path = require('path');
 
 require('karma-common-js');
 
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
 
     // Start these browsers, currently available:
@@ -16,22 +16,21 @@ module.exports = function (config) {
     // - IE (only Windows)
     browsers: ['PhantomJS'],
 
-
     // make it possible to debug test in chrome
     browserNoActivityTimeout: 3000000,
 
     // https://github.com/kastork/react-karma-rewire-webpack
     singleRun: true, //just run once by default
 
-    frameworks: [ 'mocha', 'chai-sinon'], //use the mocha test framework
+    frameworks: ['mocha', 'chai-sinon'], //use the mocha test framework
 
     files: [
-      'tests.webpack.js' //just load this file
+      'tests.webpack.js', //just load this file
     ],
     preprocessors: {
-      'tests.webpack.js': [ 'webpack', 'sourcemap' ] //preprocess with webpack and a sourcemap loader
+      'tests.webpack.js': ['webpack', 'sourcemap'], //preprocess with webpack and a sourcemap loader
     },
-    reporters: [ 'mocha', 'coverage' ],
+    reporters: ['mocha', 'coverage'],
 
     coverageReporter: {
       dir: 'reports/coverage',
@@ -39,19 +38,19 @@ module.exports = function (config) {
         {
           type: 'html',
           subdir: 'html',
-          includeAllSources: true
+          includeAllSources: true,
         },
         {
           type: 'cobertura',
-          subdir: 'cobertura'
-        }
-      ]
+          subdir: 'cobertura',
+        },
+      ],
     },
 
     junitReporter: {
       outputDir: 'reports',
       outputFile: 'reports/test-results.xml',
-      suite: ''
+      suite: '',
     },
 
     // see https://github.com/webpack/karma-webpack/issues/23
@@ -61,26 +60,26 @@ module.exports = function (config) {
         preLoaders: [
           {
             test: /^(?!.*test\.js$).*[\.js]$/,
-            include: path.resolve('lib'),
-            loader: 'babel'
+            include: path.resolve('src'),
+            loader: 'babel',
           },
           // transpile and instrument testing files with isparta
           {
             test: /\.js$/,
-            include: path.resolve('lib'),
-            loader: 'isparta'
-          }
+            include: path.resolve('src'),
+            loader: 'isparta',
+          },
         ],
         loaders: [
-          {test: /\.js[x]?$/, loader: 'babel-loader', exclude: /node_modules/}
+          {test: /\.js[x]?$/, loader: 'babel-loader', exclude: /node_modules/},
         ]
       },
       plugins: [
-        new webpack.NormalModuleReplacementPlugin(/^test-helper$/, __dirname + '/test/test-helper.js')
-      ]
+        new webpack.NormalModuleReplacementPlugin(/^test-helper$/, __dirname + '/test/test-helper.js'),
+      ],
     },
     webpackServer: {
-      noInfo: true //please don't spam the console when running in karma!
-    }
+      noInfo: true, //please don't spam the console when running in karma!
+    },
   });
 };

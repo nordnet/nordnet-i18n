@@ -9,5 +9,5 @@ global.Promise = require('es6-promise-polyfill').Promise;
 // It's a pity we can't use the same promise library. I guess it expose the native promise if it's available
 //global.Promise = require('native-promise-only');
 
-const context = require.context('./lib', true, /\.test\.js$/);
+const context = require.context('./src', true, /\.test\.js$/);
 context.keys().forEach(context);
