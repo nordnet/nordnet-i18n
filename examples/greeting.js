@@ -1,5 +1,5 @@
 import React from 'react';
-import {i18n} from '../lib/index';
+import {i18n} from '../src/index';
 
 class Greeting extends React.Component {
   render() {
