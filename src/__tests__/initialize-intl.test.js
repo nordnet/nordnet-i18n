@@ -10,6 +10,7 @@ describe('supportedLocales', () => {
 
 describe('initializeLocale', () => {
   // Notice, we can't use promiseHelper since async script occurs at loading
+
   describe('for unknown locale', () => {
     it('raise an exception', () => {
       const fn = initializeLocale.bind(undefined, 'what');
@@ -39,11 +40,11 @@ describe('initializeLocale', () => {
     });
   });
 
-  SUPPORTED_LOCALES.forEach((expectedLocale) => {
-    describe('locale ' + expectedLocale, () => {
+  SUPPORTED_LOCALES.forEach((locale) => {
+    describe('locale ' + locale, () => {
       it('is supported and returns the locale so we can chain the promise', (done) => {
-        initializeLocale(expectedLocale).then((locale)=> {
-          expect(locale).to.equal(expectedLocale);
+        initializeLocale(locale).then((res)=> {
+          expect(res).to.equal(locale);
           done();
         }, done).catch(done);
       });

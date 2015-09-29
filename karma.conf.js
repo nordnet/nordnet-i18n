@@ -71,12 +71,12 @@ module.exports = function(config) {
           },
         ],
         loaders: [
-          {test: /\.js[x]?$/, loader: 'babel-loader', exclude: /node_modules/},
-        ]
+          {test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/},
+        ],
+        resolve: {
+          extensions: ['', '.js', '.jsx'],
+        },
       },
-      plugins: [
-        new webpack.NormalModuleReplacementPlugin(/^test-helper$/, __dirname + '/test/test-helper.js'),
-      ],
     },
     webpackServer: {
       noInfo: true, //please don't spam the console when running in karma!
