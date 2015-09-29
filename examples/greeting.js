@@ -1,15 +1,15 @@
 import React from 'react';
-import {i18n} from '../lib/index';
+import {translatable} from '../src/index';
 
 class Greeting extends React.Component {
   render() {
     return (
       <div className='greeting'>
-        Hello {this.context.translate('title.world')}
+        Hello {this.props.getIntlMessage('title.world')}
       </div>
     );
   }
 }
 
-export default i18n(Greeting);
+export default translatable(Greeting);
 

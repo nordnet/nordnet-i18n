@@ -1,8 +1,10 @@
 // To get it working on react 0.13 see https://github.com/facebook/react/issues/3451
 
 import React from 'react';
+const ReactDOM = require('react-dom');
 import Greeting from './greeting';
-import {initialize} from '../lib/index';
+import {initialize} from '../src/index';
+import {i18n} from '../src/index';
 
 const intlData = {
   locales: ['sv-SE'],
@@ -15,11 +17,19 @@ const intlData = {
 
 initialize(document.body).then(start);
 
+class App extends React.Component {
+  render() {
+    return (<Greeting name='World'/>);
+  }
+}
+
+const AppWithI18N = i18n(App);
+
 function start(locale) {
-  React.render(
+  ReactDOM.render(
     <h2>
       <span>{locale}</span>
-        <Greeting name='World' {...intlData}/>
+        <AppWithI18N {...intlData}/>
     </h2>,
     document.body
   );

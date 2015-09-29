@@ -52,7 +52,6 @@ module.exports = function(config) {
       outputFile: 'reports/test-results.xml',
       suite: '',
     },
-
     // see https://github.com/webpack/karma-webpack/issues/23
     webpack: { //kind of a copy of your webpack config
       devtool: 'inline-source-map', //just do inline source maps instead of the default
@@ -63,7 +62,6 @@ module.exports = function(config) {
             include: path.resolve('src'),
             loader: 'babel',
           },
-          // transpile and instrument testing files with isparta
           {
             test: /\.js$/,
             include: path.resolve('src'),
@@ -71,12 +69,20 @@ module.exports = function(config) {
           },
         ],
         loaders: [
-          {test: /\.js[x]?$/, loader: 'babel-loader', exclude: /node_modules/},
-        ]
+          {
+            test: /\.js[x]?$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/
+          }, {
+            test: /\.json$/,
+            loader: 'json-loader',
+            exclude: /node_modules/
+          }
+        ],
       },
-      plugins: [
-        new webpack.NormalModuleReplacementPlugin(/^test-helper$/, __dirname + '/test/test-helper.js'),
-      ],
+      resolve: {
+        extensions: ['', '.js', '.json', '.jsx'],
+      },
     },
     webpackServer: {
       noInfo: true, //please don't spam the console when running in karma!

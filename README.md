@@ -25,14 +25,34 @@ Gets the locale of the user and downloads Intl configuration.
 It first check if `data-lang` and `data-country` attributes is given in the provided element.
 If these attributes are not found it will make a request to the Nordnet API which will return the locale of the user. 
 The locale is then used to download the Intl locale configuration (using the webpack code splitting feature).
-The promise is resolved with a string LANG-COUNTRY. 
+The promise is resolved with a string lang-COUNTRY. 
 
 Example: 
 
 ```js
 import {initialize} from '../lib/index';
-var myapp = document.getElementById("myapp");
-initialize(myapp).then((locale) => console.log('initialized with locale ' + locale}
+const el = document.getElementById("myapp");
+initialize(el).then(start);
+const AppWithI18N = i18n(App);
+
+function start(locale) {
+  const intlData = // get the intlData for your locale, see below
+  ReactDOM.render(<AppWithI18N {...intlData}/>,  el));
+}
+```
+
+Example of intlData:
+
+```js
+const intlData = {
+  locales: ['sv-SE'],
+  messages: {
+    title: {
+      world: 'Värld',
+    },
+  },
+}
+
 ```
 
 ### supportedLocales
@@ -49,22 +69,40 @@ console.log('Supported locales: ' + supportedLocales().join(','));
 
 ### i18n
 
-Wraps a provided React component with React context properties (`format`, `messages`, `locales`, `translate`)
+Wraps given React component with React context properties (`format`, `messages`, `locales`)
 These properties can be used to translate or format values in a locale specific way.
+You should use the i18n function at the root of your component tree. 
+Each component that needs i18n functionality should use the translatable function, see below.
+You should also provide the root component with translations for the locale.
 
 Example:
 
 ```js
 import {i18n} from '../lib/index';
-class MyComponent extends React.Component {
+class App extends React.Component {
   render() {
-    return (<h2>{this.context.translate(this.props.title)}</h2>);
+     // Your components, e.g. see MyComponent below 
   }
 }
-    
-export default i18n(MyComponent);
+export default i18n(App);
 ```
 
+### translatable
+
+If you have wrapped your parent component with the `i18n` function (see above) you can use the `translatable` function. 
+The `translatable` function will expose the `getIntlMessage` function as a property to your component.
+
+ 
+Example:
+
+```js
+class MyComponent extends React.Component {
+  render() {
+    return (<h1>{this.props.getIntlMessage('title.world')}</h1>);
+  }
+}
+export default translatable(MyComponent);
+```
  
 
 ## Usage
