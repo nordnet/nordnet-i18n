@@ -1,6 +1,6 @@
 {
   "name": "nordnet-i18n",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Nordnet React and Intl locale configuration",
   "main": "lib/index.js",
   "scripts": {
