@@ -1,7 +1,7 @@
 import React from 'react/addons';
 const TestUtils = React.addons.TestUtils;
 
-import translatable from '../translatable.jsx';
+import translatable from '../translatable';
 
 describe('translatable', () => {
   class MyComponent extends React.Component {
