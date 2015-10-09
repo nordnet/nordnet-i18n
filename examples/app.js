@@ -3,10 +3,10 @@
 import React from 'react';
 const ReactDOM = require('react-dom');
 import Greeting from './greeting';
-import {initialize} from '../src/index';
-import {i18n} from '../src/index';
+import {initialize, i18n} from '../lib/index';
 
 const intlData = {
+  formats: {},
   locales: ['sv-SE'],
   messages: {
     title: {

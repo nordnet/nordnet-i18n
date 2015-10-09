@@ -28,7 +28,7 @@ module.exports = function(config) {
       'tests.webpack.js', //just load this file
     ],
     preprocessors: {
-      'tests.webpack.js': ['webpack', 'sourcemap'], //preprocess with webpack and a sourcemap loader
+      'tests.webpack.js': ['webpack'], //preprocess with webpack and a sourcemap loader
     },
     reporters: ['mocha', 'coverage'],
 
@@ -54,7 +54,6 @@ module.exports = function(config) {
     },
     // see https://github.com/webpack/karma-webpack/issues/23
     webpack: { //kind of a copy of your webpack config
-      devtool: 'inline-source-map', //just do inline source maps instead of the default
       module: {
         preLoaders: [
           {

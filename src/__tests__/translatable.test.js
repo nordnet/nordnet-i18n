@@ -1,7 +1,8 @@
-import React from 'react/addons';
-const TestUtils = React.addons.TestUtils;
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
 import translatable from '../translatable';
+import i18n from '../i18n';
 
 describe('translatable', () => {
   class MyComponent extends React.Component {
@@ -13,8 +14,8 @@ describe('translatable', () => {
   let component;
 
   beforeEach(() => {
-    const Wrapper = translatable(MyComponent);
-    const tree = TestUtils.renderIntoDocument(React.createElement(Wrapper));
+    const Wrapper = i18n(translatable(MyComponent));
+    const tree = TestUtils.renderIntoDocument(React.createElement(Wrapper, {messages: {}, locales: [], formats: {}}));
     component = TestUtils.findRenderedComponentWithType(tree, MyComponent);
   });
 

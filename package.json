@@ -1,6 +1,6 @@
 {
   "name": "nordnet-i18n",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Nordnet React and Intl locale configuration",
   "main": "lib/index.js",
   "scripts": {
@@ -35,7 +35,7 @@
   "dependencies": {
     "intl": "^1.0.0",
     "nordnet-next-api": "^2.0.0",
-    "react": "^0.14.0-rc1",
+    "react": "^0.14.0",
     "react-intl": "^1.2.0"
   },
   "devDependencies": {
@@ -73,6 +73,8 @@
     "mocha": "^2.2.4",
     "npm-run-all": "^1.2.6",
     "phantomjs": "^1.9.18",
+    "react-addons-test-utils": "^0.14.0",
+    "react-dom": "^0.14.0",
     "rimraf": "^2.4.3",
     "sinon": "^1.16.1",
     "sinon-as-promised": "^4.0.0",

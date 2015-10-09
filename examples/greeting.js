@@ -1,5 +1,5 @@
 import React from 'react';
-import {translatable} from '../src/index';
+import {translatable} from '../lib/index';
 
 class Greeting extends React.Component {
   render() {
